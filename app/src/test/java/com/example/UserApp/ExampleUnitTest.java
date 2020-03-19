@@ -1,4 +1,4 @@
-package com.example.akila;
+package com.example.UserApp;
 
 import org.junit.Test;
 
