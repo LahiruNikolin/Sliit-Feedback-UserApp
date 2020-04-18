@@ -10,18 +10,46 @@ import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "mainact";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("flags")
+                .document("svDqsKxgDCFqn3lJWB29")
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
 
+
+                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+
+                    @Override
+                    public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                        @Nullable FirebaseFirestoreException e) {
+                        if (e != null) {
+                            Log.w(TAG, "Listen failed.", e);
+                            return;
+                        }
+
+                        if (snapshot != null && snapshot.exists()) {
+                            Log.d(TAG, "Current data: " + snapshot.getData());
+                            showNotification(getApplicationContext(),"Feedback Required","Click here give feeedbacks to your lecturers",intent);
+                        } else {
+                            Log.d(TAG, "Current data: null");
+                        }
+                    }
+                });
 
 
     }
