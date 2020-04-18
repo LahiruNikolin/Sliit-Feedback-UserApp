@@ -20,7 +20,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
+
     private static final String TAG = "mainact";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
