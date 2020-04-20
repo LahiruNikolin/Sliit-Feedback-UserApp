@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.UserApp.Adapters.TeacherAdapter;
+import com.example.UserApp.Constans.Constants;
 import com.example.UserApp.Models.Teacher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -69,6 +70,9 @@ public class TeacherListActivity extends AppCompatActivity {
 
     private void rateTeacher(String id) {
         Log.d(TAG,id);
+        Intent intent = new Intent(getApplicationContext(), RatingActivity.class);
+        intent.putExtra(Constants.TEACHER_ID,id);
+        startActivity(intent);
 
     }
 
