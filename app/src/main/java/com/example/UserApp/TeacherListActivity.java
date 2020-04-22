@@ -57,7 +57,7 @@ public class TeacherListActivity extends AppCompatActivity {
 
                 switch (view.getId()) {
                     case R.id.btTeacherRate:
-                        rateTeacher(teachersList.get(position).getId());
+                        rateTeacher(teachersList.get(position));
                         break;
 
                 }
@@ -66,12 +66,10 @@ public class TeacherListActivity extends AppCompatActivity {
 
     }
 
-    private void rateTeacher(String id) {
-        Log.d(TAG,id);
+    private void rateTeacher(Teacher teacher) {
+        RatingActivity.teacher =teacher;
         Intent intent = new Intent(getApplicationContext(), RatingActivity.class);
-        intent.putExtra(Constants.TEACHER_ID,id);
         startActivity(intent);
-
     }
 
     private void getTeacherList(ArrayList<String> TeacherIds){
