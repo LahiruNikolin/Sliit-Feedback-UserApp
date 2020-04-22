@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.UserApp.Adapters.TeacherAdapter;
-import com.example.UserApp.Constans.Constants;
+import com.example.UserApp.Constants.Constants;
 import com.example.UserApp.Models.Teacher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -46,10 +46,8 @@ public class TeacherListActivity extends AppCompatActivity {
         // Access a Cloud Firestore instance from your Activity
         fireDB = FirebaseFirestore.getInstance();
 
-        ArrayList<String> ids = new ArrayList<String>();
-        ids.add("01zUdjxGo43Eszlbdmxj");
-        ids.add("2aaSnukfyAQY0SynPEuY");
-        ids.add("3m8RUg5MrZJ0kxtdZ7VJ");
+        Intent intent = getIntent();
+        ArrayList<String> ids = intent.getStringArrayListExtra(Constants.TEACHER_IDS);
         getTeacherList(ids);
 
         mAdapter = new TeacherAdapter(mActivity,teachersList);
