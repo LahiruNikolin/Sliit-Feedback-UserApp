@@ -44,46 +44,60 @@ public class LoginActivity extends AppCompatActivity {
 
         bTLogin = (Button) findViewById(R.id.button);
 
-        itNum = etItnum.getText().toString();
-        password = etPassword.getText().toString();
+
 
 
         bTLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(itNum,password);
+
+                itNum = etItnum.getText().toString();
+                password = etPassword.getText().toString();
+
+                if(!itNum.equals("") && !password.equals("")) {
+                    login(itNum, password);
+                }else{
+                    Toast.makeText(LoginActivity.this, "Check your inputs", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+
 
     }
 
     private void login(String itnum, final String password){
         DocumentReference docRef = fireDB.collection("students").document(itnum);
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Student student = documentSnapshot.toObject(Student.class);
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "Document exists!");
+                        Student student = document.toObject(Student.class);
 
-                if(student.getPassword().equals(password)){
-                    Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, student.getFname() + "logged in");
-                    ProfileActivity.LOGGED_IN_STUDENT=student;
-                    Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(LoginActivity.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
+                        if(student.getPassword().equals(password)){
+                            Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, student.getFname() + "logged in");
+                            ProfileActivity.LOGGED_IN_STUDENT=student;
+                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(LoginActivity.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Log.d(TAG, "Failed to login, Please check your UserName");
+                        Toast.makeText(LoginActivity.this, "Failed to login, Please check your UserName", Toast.LENGTH_SHORT).show();
+
+                    }
+                } else {
+                    Log.d(TAG, "Failed with: ", task.getException());
                 }
-
-            }
-
-
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this, "Failed to login, Please check your UserName", Toast.LENGTH_SHORT).show();
-                Log.d(TAG, e.toString());
-
             }
         });
+
+
+
     }
 }
