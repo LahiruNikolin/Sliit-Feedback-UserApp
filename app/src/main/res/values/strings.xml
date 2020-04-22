@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">akila</string>
+    <string name="app_name">SLIIT Feedback - User</string>
     <string name="title_activity_main2">Main2Activity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

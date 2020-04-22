@@ -153,7 +153,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void gotoFeedback(ArrayList<String> teachers){
-        Intent intent = new Intent(getApplicationContext(), Main3Activity.class);
+        Intent intent = new Intent(getApplicationContext(), TeacherListActivity.class);
         intent.putStringArrayListExtra(Constants.TEACHER_IDS, teachers);
         startActivity(intent);
     }
