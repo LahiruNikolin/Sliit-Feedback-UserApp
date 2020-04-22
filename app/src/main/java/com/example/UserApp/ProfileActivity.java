@@ -88,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void feedback(){
         //IF FEEDBACK ENABLED
-        DocumentReference docRef = fireDB.collection("flags").document("svDqsKxgDCFqn3lJWB29 ");
+        DocumentReference docRef = fireDB.collection("flags").document("svDqsKxgDCFqn3lJWB29");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -100,6 +100,9 @@ public class ProfileActivity extends AppCompatActivity {
 
                         if(Boolean.parseBoolean(enabled)){
                             getSubjectList();
+                        }else{
+                            Log.d(TAG, "Failed to login, Please check your UserName");
+                            Toast.makeText(ProfileActivity.this, "Feedback option is disabled at this moment", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Log.d(TAG, "Failed to login, Please check your UserName");
