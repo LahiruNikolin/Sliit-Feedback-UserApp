@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="STUDENT PROFILE"
+            android:text="@string/student_profile"
             android:textSize="24sp" />
 
         <ImageView
@@ -59,7 +59,7 @@
                     android:layout_width="131dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="20dp"
-                    android:text="NAME"
+                    android:text="@string/name"
                     android:textSize="24sp"
                      />
 
@@ -83,7 +83,7 @@
                     android:layout_width="131dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="20dp"
-                    android:text="ITNO"
+                    android:text="@string/itno"
                     android:textSize="24sp"
                     />
 
@@ -107,7 +107,7 @@
                     android:layout_width="131dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="20dp"
-                    android:text="YEAR"
+                    android:text="@string/year"
                     android:textSize="24sp"
                     />
 
@@ -131,7 +131,7 @@
                     android:layout_width="131dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="20dp"
-                    android:text="SEM"
+                    android:text="@string/sem"
                     android:textSize="24sp"
                     />
 
@@ -148,7 +148,7 @@
                 android:id="@+id/button"
                 android:layout_width="164dp"
                 android:layout_height="60dp"
-                android:text="FEEDBACK"
+                android:text="@string/feedback"
                 android:layout_marginTop="15dp"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:textSize="24sp"
@@ -161,7 +161,7 @@
                 android:layout_height="38dp"
                 android:background="#ffff"
                 android:layout_gravity="center_horizontal"
-                android:text="logout" />
+                android:text="@string/logout" />
 
         </LinearLayout>
 
