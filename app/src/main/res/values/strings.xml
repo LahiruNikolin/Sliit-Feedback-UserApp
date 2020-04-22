@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">akila</string>
+    <string name="app_name">SLIIT Feedback - User</string>
     <string name="title_activity_main2">Main2Activity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,4 +9,17 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="presentation">Presentation</string>
+    <string name="preparation">Preparation</string>
+    <string name="punctuality">Punctuality</string>
+    <string name="interaction">Interaction</string>
+    <string name="back">Back</string>
+    <string name="submit">Submit</string>
+    <string name="student_profile">STUDENT PROFILE</string>
+    <string name="name">NAME</string>
+    <string name="itno">ITNO</string>
+    <string name="year">YEAR</string>
+    <string name="sem">SEM</string>
+    <string name="feedback">FEEDBACK</string>
+    <string name="logout">logout</string>
 </resources>

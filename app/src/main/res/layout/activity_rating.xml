@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.UserApp.RatingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/teacherPic"
+                android:layout_width="252dp"
+                android:layout_height="186dp"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:src="@drawable/img1"/>
+
+            <TextView
+                android:id="@+id/teacherName"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ms.Sonali Perera"
+                android:textColor="#413A3A"
+                android:textSize="26dp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="141dp"
+                    android:layout_height="31dp"
+                    android:text="@string/presentation"
+                    android:textColor="#413A3A"
+                    android:textSize="16dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingPresent"
+                    android:layout_width="239dp"
+                    android:layout_height="45dp"
+                    android:numStars="5"   />
+
+                <TextView
+                    android:layout_width="141dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/preparation"
+                    android:textColor="#413A3A"
+                    android:textSize="16dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingPreparation"
+                    android:layout_width="239dp"
+                    android:layout_height="45dp"
+                    android:numStars="5"   />
+
+                <TextView
+                    android:layout_width="141dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/punctuality"
+                    android:textColor="#413A3A"
+                    android:textSize="16dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingPunctuality"
+                    android:layout_width="239dp"
+                    android:layout_height="45dp"
+                    android:numStars="5"   />
+
+                <TextView
+                    android:layout_width="141dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/interaction"
+                    android:textColor="#413A3A"
+                    android:textSize="16dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingInteraction"
+                    android:layout_width="239dp"
+                    android:layout_height="45dp"
+                    android:numStars="5"   />
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/buttBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#0984e3"
+                        android:text="@string/back"
+                        android:layout_marginRight="30dp"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/buttSubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#0984e3"
+                        android:text="@string/submit"
+                        android:textColor="@android:color/white" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
