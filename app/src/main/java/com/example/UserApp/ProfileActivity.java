@@ -45,6 +45,8 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView name,itno,year,sem;
     private Button but,logout;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,7 +158,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 Subject subject = document.toObject(Subject.class);
                                 TeacherIds.add(subject.getTid());
                             }
-                            gotoFeedback(TeacherIds);
+                            gotoFeedback(TeacherIds,0);
 
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -165,9 +167,10 @@ public class ProfileActivity extends AppCompatActivity {
                 });
     }
 
-    private void gotoFeedback(ArrayList<String> teachers){
+    private void gotoFeedback(ArrayList<String> teachers,int flag){
         Intent intent = new Intent(getApplicationContext(), TeacherListActivity.class);
         intent.putStringArrayListExtra(Constants.TEACHER_IDS, teachers);
+
         startActivity(intent);
     }
 
@@ -181,7 +184,8 @@ public class ProfileActivity extends AppCompatActivity {
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
 
 
-                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent= new Intent(getApplicationContext(),ProfileActivity.class);
+
 
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot snapshot,
@@ -236,7 +240,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         notificationManager.notify(notificationId, mBuilder.build());
     }
-
 
 
 }
