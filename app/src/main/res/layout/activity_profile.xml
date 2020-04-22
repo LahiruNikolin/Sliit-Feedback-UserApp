@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="STUDENT PROFILE"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="177dp"
+            android:layout_height="169dp"
+            android:layout_marginTop="10dp"
+           android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/student" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="131dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NAME"
+                    android:textSize="24sp"
+                     />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="194dp"
+                    android:layout_height="42dp"
+                    android:text="Harshana Akila"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="131dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="ITNO"
+                    android:textSize="24sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvItno"
+                    android:layout_width="194dp"
+                    android:layout_height="42dp"
+                    android:text="Harshana Akila"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="131dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YEAR"
+                    android:textSize="24sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:layout_width="194dp"
+                    android:layout_height="42dp"
+                    android:text="Harshana Akila"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="131dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="SEM"
+                    android:textSize="24sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSem"
+                    android:layout_width="194dp"
+                    android:layout_height="42dp"
+                    android:text="Harshana Akila"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="164dp"
+                android:layout_height="60dp"
+                android:text="FEEDBACK"
+                android:layout_marginTop="15dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textSize="24sp"
+               android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_margin="5dp"
+                android:layout_width="83dp"
+                android:layout_height="38dp"
+                android:background="#ffff"
+                android:layout_gravity="center_horizontal"
+                android:text="logout" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
