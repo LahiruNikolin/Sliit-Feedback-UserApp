@@ -88,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void feedback(){
         //IF FEEDBACK ENABLED
-        DocumentReference docRef = fireDB.collection("flags").document("feedbacks");
+        DocumentReference docRef = fireDB.collection("flags").document("svDqsKxgDCFqn3lJWB29 ");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -96,7 +96,7 @@ public class ProfileActivity extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d(TAG, "Document exists!");
-                        String enabled = document.get("enabled").toString();
+                        String enabled = document.get("feedback").toString();
 
                         if(Boolean.parseBoolean(enabled)){
                             getSubjectList();
